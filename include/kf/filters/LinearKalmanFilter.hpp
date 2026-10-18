@@ -7,23 +7,37 @@ namespace kf
 
 class LinearKalmanFilter
 {
-
 private:
     StateVector state_;
     StateMatrix cov_;
 
+    MeasurementVector innovation_;
+    KalmanGainMatrix kalman_gain_;
+
 public:
-    LinearKalmanFilter(const StateVector &initial_state, const StateMatrix &initial_cov);
+    LinearKalmanFilter(
+        const StateVector& initial_state,
+        const StateMatrix& initial_cov
+    );
 
     const StateVector& state() const;
 
     const StateMatrix& covariance() const;
 
-    void predict(const StateMatrix &F, const StateMatrix &Q);
+    const MeasurementVector& innovation() const;
 
-    void update(const MeasurementVector &z, const MeasurementMatrix &H, 
-        const MeasurementCovariance &R);
+    const KalmanGainMatrix& kalmanGain() const;
 
+    void predict(
+        const StateMatrix& F,
+        const StateMatrix& Q
+    );
+
+    void update(
+        const MeasurementVector& z,
+        const MeasurementMatrix& H,
+        const MeasurementCovariance& R
+    );
 };
 
 }

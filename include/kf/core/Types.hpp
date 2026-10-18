@@ -14,4 +14,5 @@ namespace kf
     using MeasurementVector = Eigen::Matrix<Scalar, Eigen::Dynamic, 1>;
     using MeasurementMatrix = Eigen::Matrix<Scalar, Eigen::Dynamic, kStateDim>;
     using MeasurementCovariance = Eigen::Matrix<Scalar, Eigen::Dynamic, Eigen::Dynamic>;
+    using KalmanGainMatrix = Eigen::Matrix<Scalar,kStateDim,Eigen::Dynamic>;
 }

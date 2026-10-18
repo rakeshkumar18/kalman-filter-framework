@@ -23,28 +23,91 @@ void kf::LinearKalmanFilter::predict(const kf::StateMatrix &F, const kf::StateMa
     cov_ = F * cov_ * F.transpose() + Q;
 }
 
-void kf::LinearKalmanFilter::update(const kf::MeasurementVector &z,  
-    const kf::MeasurementMatrix &H, const kf::MeasurementCovariance &R)
+void
+kf::LinearKalmanFilter::update(
+    const kf::MeasurementVector& z,
+    const kf::MeasurementMatrix& H,
+    const kf::MeasurementCovariance& R
+)
 {
-    // Predicted Measurement from a priori state
-    kf::MeasurementVector z_pred = H * state_;
+    // ----------------------------------------
+    // Predicted measurement
+    // ----------------------------------------
 
-    // compute Innovation
-    kf::MeasurementVector innovation = z - z_pred;
+    kf::MeasurementVector z_pred =
+        H * state_;
 
-    // compute covatiance matrix
 
-    kf::MeasurementCovariance S = H * cov_ * H.transpose() + R;
+    // ----------------------------------------
+    // Innovation
+    // y = z - Hx-
+    // ----------------------------------------
 
-    // Calculate Gain
+    innovation_ =
+        z - z_pred;
 
-    auto K = cov_ * H.transpose() *  S.inverse()  ;
 
-    // updated step
-    state_ += K * innovation;
+    // ----------------------------------------
+    // Innovation covariance
+    // S = H P- H^T + R
+    // ----------------------------------------
 
-    // update posterior covariance
-    StateMatrix I = StateMatrix::Identity();
+    kf::MeasurementCovariance S =
+        H
+        * cov_
+        * H.transpose()
+        + R;
 
-    cov_ = (I - K * H) * cov_;
+
+    // ----------------------------------------
+    // Kalman gain
+    // K = P- H^T S^-1
+    // ----------------------------------------
+
+    kalman_gain_ =
+        cov_
+        * H.transpose()
+        * S.inverse();
+
+
+    // ----------------------------------------
+    // State correction
+    // x+ = x- + Ky
+    // ----------------------------------------
+
+    state_ =
+        state_
+        +
+        kalman_gain_
+        * innovation_;
+
+
+    // ----------------------------------------
+    // Covariance correction
+    // P+ = (I - KH)P-
+    // ----------------------------------------
+
+    kf::StateMatrix I =
+        kf::StateMatrix::Identity();
+
+
+    cov_ =
+        (
+            I
+            -
+            kalman_gain_
+            * H
+        )
+        * cov_;
+}
+
+const kf::MeasurementVector& kf::LinearKalmanFilter::innovation() const
+{
+    return innovation_;
+}
+
+
+const kf::KalmanGainMatrix& kf::LinearKalmanFilter::kalmanGain() const
+{
+    return kalman_gain_;
 }
