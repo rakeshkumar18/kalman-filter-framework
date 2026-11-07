@@ -2,24 +2,20 @@
 
 #include "kf/core/Types.hpp"
 
-namespace kf
-{
+namespace kf {
 
-class GPSMeasurementModel
-{
+class GPSMeasurementModel {
 public:
-    static constexpr int kMeasurementDim = 2;
+  static constexpr int kMeasurementDim = 2;
 
-    using MeasurementVector =
-        Eigen::Matrix<Scalar, kMeasurementDim, 1>;
+  using MeasurementVector = Eigen::Matrix<Scalar, kMeasurementDim, 1>;
 
-    using MeasurementMatrix =
-        Eigen::Matrix<Scalar, kMeasurementDim, kStateDim>;
+  using MeasurementMatrix = Eigen::Matrix<Scalar, kMeasurementDim, kStateDim>;
 
-    using MeasurementCovariance =
-        Eigen::Matrix<Scalar, kMeasurementDim, kMeasurementDim>;
+  using MeasurementCovariance =
+      Eigen::Matrix<Scalar, kMeasurementDim, kMeasurementDim>;
 
-    MeasurementMatrix measurementMatrix() const;
+  MeasurementMatrix measurementMatrix() const;
 };
 
-}
+} // namespace kf

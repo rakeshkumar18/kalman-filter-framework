@@ -2,20 +2,18 @@
 
 #include "kf/core/Types.hpp"
 
-namespace kf
-{
+namespace kf {
 
-class VehicleSimulator
-{
+class VehicleSimulator {
 private:
-    StateVector true_state_;
+  StateVector true_state_;
 
 public:
-    VehicleSimulator(const StateVector &intial_state);
+  VehicleSimulator(const StateVector &intial_state);
 
-    void step(Scalar dt, Scalar ax, Scalar ay);
+  void step(Scalar dt, Scalar ax, Scalar ay);
 
-    const StateVector &state() const;
+  const StateVector &state() const;
 };
 
-}
+} // namespace kf

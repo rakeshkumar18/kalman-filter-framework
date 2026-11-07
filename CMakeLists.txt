@@ -86,6 +86,11 @@ add_executable(
     src/simulation/VehicleSimulator.cpp
     src/sensors/GPSSensor.cpp
     src/visualization/RealTimeViewer.cpp
+    src/models/NonlinearVehicleModel.cpp
+    src/filters/ExtendedKalmanFilter.cpp
+    src/models/LidarMeasurementModel.cpp
+    src/sensors/LidarSensor.cpp
+    src/simulation/EKFSimulation.cpp
 )
 
 

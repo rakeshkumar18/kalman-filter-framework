@@ -1,0 +1,10 @@
+<map id="include/kf/sensors" name="include/kf/sensors">
+<area shape="rect" id="node1" href="dir_06faef86af89dfc5a0dabce42072e45c.html" title="models" alt="" coords="27,126,90,152"/>
+<area shape="rect" id="node2" href="dir_1d2922d095789da32586296b3443b5a4.html" title="core" alt="" coords="114,126,160,152"/>
+<area shape="rect" id="node3" href="dir_92f2124bd096a6835be9742883c3c009.html" title="sensors" alt="" coords="60,52,127,78"/>
+<area shape="poly" id="edge1" href="dir_000008_000006.html" alt="" coords="89,76,74,113,69,110,86,80"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000008_000006.html" title="1" alt="" coords="77,105,84,120"/>
+<area shape="poly" id="edge2" href="dir_000008_000001.html" alt="" coords="102,76,125,112,119,113,100,81"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000008_000001.html" title="2" alt="" coords="124,98,131,113"/>
+<area shape="rect" id="clust1" href="dir_f611b84685ef5972f8b18fe7e0fe9f76.html" title="kf" alt="" coords="16,16,171,162"/>
+</map>

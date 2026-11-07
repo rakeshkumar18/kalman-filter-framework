@@ -1,0 +1,16 @@
+<map id="src/sensors/LidarSensor.cpp" name="src/sensors/LidarSensor.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="84,5,271,31"/>
+<area shape="rect" id="Node000002" href="$_lidar_sensor_8hpp.html" title=" " alt="" coords="17,79,196,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,33,132,69,127,66,167,29"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="221,79,278,105"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="189,29,229,67,224,68,189,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,160,70,186"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="95,108,60,150,56,147,97,103"/>
+<area shape="rect" id="Node000004" href="$_types_8hpp.html" title=" " alt="" coords="110,241,235,267"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="109,103,119,145,135,192,156,229,150,229,130,194,114,146,108,108"/>
+<area shape="rect" id="Node000006" href="$_lidar_measurement_model_8hpp.html" title=" " alt="" coords="144,153,334,193"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="127,102,196,144,191,146,127,108"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="124,315,220,341"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="174,265,175,300,170,298,170,269"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="224,192,194,231,191,227,220,195"/>
+</map>

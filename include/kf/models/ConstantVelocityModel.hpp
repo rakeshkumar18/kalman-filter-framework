@@ -1,16 +1,15 @@
-# pragma once
+#pragma once
 
 #include "kf/core/Types.hpp"
 
-namespace kf
-{
+namespace kf {
 
-class ConstantVelocityModel
-{
+class ConstantVelocityModel {
 public:
-    StateMatrix stateTransition(Scalar dt) const;
+  StateMatrix stateTransition(Scalar dt) const;
 
-    StateMatrix processNoise(Scalar dt, const AccelerationCovariance &acc_cov) const;
+  StateMatrix processNoise(Scalar dt,
+                           const AccelerationCovariance &acc_cov) const;
 };
 
-}
+} // namespace kf
